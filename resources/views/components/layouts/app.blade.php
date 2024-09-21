@@ -10,7 +10,7 @@
 {{--    <wireui:scripts />--}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="ba">
+<body class="app-background">
 
 {{ $slot }}
 
