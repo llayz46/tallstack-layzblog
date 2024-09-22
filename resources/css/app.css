@@ -7,6 +7,6 @@
 
 @layer utilities {
     .app-background {
-        @apply bg-app-pattern w-full inset-0 absolute select-none size-64 bg-repeat mix-blend-soft-light opacity-10 bg-left-top pointer-events-none z-50 animate-noisy;
+        @apply bg-app-pattern w-full h-full inset-0 absolute select-none size-64 bg-repeat mix-blend-soft-light opacity-10 bg-left-top pointer-events-none z-50 animate-noisy;
     }
 }
