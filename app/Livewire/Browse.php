@@ -3,16 +3,19 @@
 namespace App\Livewire;
 
 use App\Models\Article;
-use Illuminate\Support\Collection;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 #[Title('Home')]
 #[Layout('components.layouts.app')]
 class Browse extends Component
 {
+    use WithPagination;
+
     public int $perPage = 10;
 
     public function loadMore() {

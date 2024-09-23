@@ -22,7 +22,7 @@ class ArticleFactory extends Factory
             'title' => $title = $this->faker->sentence,
             'slug' => Str::slug($title),
             'content' => $this->faker->paragraphs(7, true),
-            'resume' => $this->faker->sentence,
+            'resume' => $this->faker->sentences(3, true),
             'views' => $views = $this->faker->numberBetween(0, 1000),
             'likes' => $this->faker->numberBetween(0, $views),
             'category_id' => Category::factory(),

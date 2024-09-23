@@ -12,7 +12,7 @@
 </head>
 <body class="relative">
     <div class="app-background"></div>
-    <main class="flex flex-col justify-center w-full mx-auto max-w-5xl border-x border-x-gray-700/25 p-20">
+    <main class="flex flex-col w-full 3xl:mx-auto max-w-5xl border-x border-x-gray-700/25 p-10 py-20 md:p-20">
         <div class="flex justify-between items-center gap-3 w-full pb-12">
             <a href="{{ route('browse') }}" class="group" wire:navigate.hover>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="min-w-6 size-6 group-hover:scale-105 group-hover:stroke-primary-400 transition stroke-primary-500">
@@ -20,15 +20,19 @@
                 </svg>
             </a>
 
-            <span class="h-px w-full bg-primary-500"></span>
+            <div class="3xl:hidden block">
+                <livewire:search/>
+            </div>
 
-            <h1 class="text-white font-serif text-4xl">LayzBlog</h1>
+            <span role="separator" class="h-px w-full bg-primary-500"></span>
 
-            <span class="h-px w-full bg-primary-500"></span>
+            <h1 class="text-white font-serif text-lg md:text-4xl">LayzBlog</h1>
 
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="min-w-6 size-6 stroke-primary-500">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-            </svg>
+            <span role="separator" class="hidden 3xl:block h-px w-full bg-primary-500"></span>
+
+            <div class="hidden 3xl:block">
+                <livewire:search/>
+            </div>
         </div>
 
         {{ $slot }}

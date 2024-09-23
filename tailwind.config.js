@@ -21,7 +21,6 @@ export default {
                     '900': '#762926',
                     '950': '#3f1210',
                 },
-
             },
             fontFamily: {
                 'sans': ['Inria Sans', 'sans-serif'],
@@ -29,6 +28,7 @@ export default {
             },
             backgroundImage: {
                 'app-pattern': "url('../images/noisy-texture.webp')",
+                'stripe': "repeating-linear-gradient(45deg, #0E1118, #0E1118 5px, #1A202C 5px, #1A202C 10px)",
             },
             animation: {
                 'noisy': "noisy 6s steps(10) infinite",
@@ -40,6 +40,12 @@ export default {
                 }
             },
         },
+        screens: {
+            ...require('tailwindcss/defaultConfig').theme.screens,
+            '3xl': '1800px',
+        },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms'),
+    ],
 }
