@@ -15,10 +15,9 @@
                     </div>
                     <p class="clamp-3 md:max-w-[80%]">{{ $article->resume }}</p>
                     <div class="flex gap-2">
-                        <span class="w-fit inline-flex items-center rounded-md px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-700/25">Badge</span>
-                        <span class="w-fit inline-flex items-center rounded-md px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-700/25">Badge</span>
-                        <span class="w-fit inline-flex items-center rounded-md px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-700/25">Badge</span>
-                        <span class="w-fit inline-flex items-center rounded-md px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-700/25">Badge</span>
+                        @foreach($article->tags as $tag)
+                            <span class="w-fit inline-flex items-center rounded-md px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-700/25">{{ $tag->title }}</span>
+                        @endforeach
                     </div>
                 </article>
             </a>

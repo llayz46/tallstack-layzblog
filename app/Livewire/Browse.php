@@ -5,7 +5,6 @@ namespace App\Livewire;
 use App\Models\Article;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -25,7 +24,7 @@ class Browse extends Component
     #[Computed()]
     public function articles()
     {
-        return Article::paginate($this->perPage);
+        return Article::with('tags')->paginate($this->perPage);
     }
 
 //    public function render()

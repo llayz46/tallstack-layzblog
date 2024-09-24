@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ $title ? $title . ' - LayzBlog' : 'LayzBlog' }}</title>
-{{--    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/x-icon">--}}
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
 {{--    <wireui:scripts />--}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="relative">
+<body class="relative min-h-svh">
     <div class="app-background"></div>
-    <main class="flex flex-col w-full 3xl:mx-auto max-w-5xl border-x border-x-gray-700/25 p-10 py-20 md:p-20">
+    <main class="flex flex-col w-full min-h-svh 3xl:mx-auto max-w-5xl border-x border-x-gray-700/25 p-10 py-20 md:p-20">
         <div class="flex justify-between items-center gap-3 w-full pb-12">
             <a href="{{ route('browse') }}" class="group" wire:navigate.hover>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="min-w-6 size-6 group-hover:scale-105 group-hover:stroke-primary-400 transition stroke-primary-500">
