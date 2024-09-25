@@ -1,7 +1,7 @@
 <div>
     <div class="flex flex-col gap-8">
         @foreach($this->articles as $article)
-            <a class="group" href="#">
+            <a class="group" href="{{ route('show', $article->slug) }}">
                 <article class="flex flex-col gap-2 text-white/50 duration-75 group-hover:text-white/70">
                     <div class="flex w-full items-center justify-between">
                         <h2 class="text-xl md:text-2xl w-full max-w-2xl truncate whitespace-nowrap pr-4 font-medium text-white/80 group-hover:underline md:w-auto md:flex-none md:pr-0">

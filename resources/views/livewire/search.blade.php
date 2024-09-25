@@ -36,8 +36,8 @@
                     <input type="search" wire:model.live.debounce.150ms="search" x-ref="searchInput" autofocus class="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-300 placeholder:text-white/40 focus:ring-0 sm:text-sm" placeholder="Rechercher..." role="combobox" aria-expanded="false" aria-controls="options">
                 </div>
 
-                @if($articles->isNotEmpty())
-                    <div class="max-h-80 scroll-py-2 divide-y divide-gray-500 divide-opacity-10 overflow-y-auto">
+                @if($articles->count() > 0)
+                    <div class="w-full max-h-80 scroll-py-2 divide-y divide-gray-500 divide-opacity-10 overflow-y-auto">
                         <div class="p-2">
                             <ul class="text-sm text-gray-300">
                                 @foreach($articles as $article)
@@ -47,8 +47,14 @@
                         </div>
                     </div>
                 @else
-                    <div class="px-6 py-14 text-center sm:px-14">
+                    <div wire:loading.remove class="px-6 py-14 text-center sm:px-14">
                         <p class="mt-4 text-sm text-gray-300">Désolé, aucun article ne correspond à votre recherche.</p>
+                    </div>
+                @endif
+
+                @if($articles->count() === 0)
+                    <div wire:loading class="p-2 w-full">
+                        <div class="bg-shimmer animate-shimmer bg-[length:200%_100%] flex select-none items-center rounded-md px-3 h-6 bg-gray-700/15"></div>
                     </div>
                 @endif
             </div>
