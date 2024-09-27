@@ -30,6 +30,13 @@ return [
 
     'disks' => [
 
+        'posts' => [ // Référence à la clé 'posts' dans config/sheets.php
+            'driver' => 'local',
+            'root' => storage_path('app/posts'), // Chemin du répertoire de stockage : storage/app/posts
+            'serve' => true,
+            'throw' => false,
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),

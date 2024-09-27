@@ -23,7 +23,7 @@ export default {
                 },
             },
             fontFamily: {
-                'sans': ['Inria Sans', 'sans-serif'],
+                'sans': ['Work Sans', 'sans-serif'],
                 'serif': ['Lora', 'serif'],
             },
             backgroundImage: {
@@ -53,5 +53,6 @@ export default {
     },
     plugins: [
         require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
     ],
 }

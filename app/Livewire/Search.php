@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
-use App\Models\Article;
 use Livewire\Component;
+use Spatie\Sheets\Facades\Sheets;
 
 class Search extends Component
 {
@@ -11,14 +11,15 @@ class Search extends Component
 
     public function render()
     {
-        $articles = collect();
-
+        $posts = collect();
         if (strlen($this->search) > 2) {
-            $articles = Article::where('title', 'like', "%{$this->search}%")->get();
+            $posts = Sheets::collection('posts')->all()->filter(function ($post) {
+                return str_contains(strtolower($post->title), strtolower($this->search));
+            });
         }
 
         return view('livewire.search', [
-            'articles' => $articles
+            'posts' => $posts
         ]);
     }
 }

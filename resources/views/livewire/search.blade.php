@@ -36,12 +36,12 @@
                     <input type="search" wire:model.live.debounce.150ms="search" x-ref="searchInput" autofocus class="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-300 placeholder:text-white/40 focus:ring-0 sm:text-sm" placeholder="Rechercher..." role="combobox" aria-expanded="false" aria-controls="options">
                 </div>
 
-                @if($articles->count() > 0)
+                @if($posts->count() > 0)
                     <div class="w-full max-h-80 scroll-py-2 divide-y divide-gray-500 divide-opacity-10 overflow-y-auto">
                         <div class="p-2">
                             <ul class="text-sm text-gray-300">
-                                @foreach($articles as $article)
-                                    <x-search.results href="#" :$article/>
+                                @foreach($posts as $post)
+                                    <x-search.results href="#" :$post/>
                                 @endforeach
                             </ul>
                         </div>
@@ -52,7 +52,7 @@
                     </div>
                 @endif
 
-                @if($articles->count() === 0)
+                @if($posts->count() === 0)
                     <div wire:loading class="p-2 w-full">
                         <div class="bg-shimmer animate-shimmer bg-[length:200%_100%] flex select-none items-center rounded-md px-3 h-6 bg-gray-700/15"></div>
                     </div>
